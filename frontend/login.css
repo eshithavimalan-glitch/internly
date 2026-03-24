@@ -1,0 +1,478 @@
+.sign-up41-wrapper {
+  display: contents;
+}
+ 
+.sign-up41-container1 {
+  width: 100%;
+  height: 900px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+ 
+.sign-up41-container2 {
+  top: 0px;
+  flex: 0 0 auto;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+  bottom: 0px;
+  height: 100%;
+  display: flex;
+  z-index: 10;
+  position: absolute;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: rgba(0,0,0,0.4);
+}
+ 
+.sign-up41-thq-form-elm {
+  gap: var(--dl-layout-space-twounits);
+  width: 95%;
+  max-width: 460px;
+  padding : 28px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--dl-layout-radius-radius4);
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: var(--dl-color-theme-neutral-light);
+}
+ 
+.sign-up41-thq-title-root-elm {
+  gap: var(--dl-layout-space-halfunit);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+ 
+.sign-up41-thq-text-elm1 {
+  text-align: center;
+}
+ 
+.sign-up41-container3 {
+  gap: var(--dl-layout-space-unit);
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+ 
+.sign-up41-thq-button-elm1 {
+  gap: var(--dl-layout-space-halfunit);
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  border-color: var(--dl-color-theme-primary1);
+  border-style: solid;
+  border-width: 1px;
+  justify-content: center;
+}
+ 
+.sign-up41-icon1 {
+  width: 24px;
+  height: 24px;
+}
+ 
+.sign-up41-thq-button-elm2 {
+  gap: var(--dl-layout-space-halfunit);
+  width: 100%;
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  border-color: var(--dl-color-theme-primary1);
+  border-style: solid;
+  border-width: 1px;
+  justify-content: center;
+}
+ 
+.sign-up41-icon3 {
+  width: 24px;
+  height: 24px;
+}
+ 
+.sign-up41-thq-divider-elm1 {
+  gap: var(--dl-layout-space-oneandhalfunits);
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+}
+ 
+.sign-up41-thq-divider-elm2 {
+  flex: 1;
+  width: var(--dl-layout-size-medium);
+  height: 1px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: var(--dl-color-theme-primary1);
+}
+ 
+.sign-up41-thq-divider-elm3 {
+  flex: 1;
+  width: var(--dl-layout-size-medium);
+  height: 1px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: var(--dl-color-theme-primary1);
+}
+ 
+.sign-up41-text1 {
+  text-align: center;
+}
+ 
+.sign-up41-form {
+  gap: var(--dl-layout-space-unit);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+ 
+.sign-up41-thq-email-elm {
+  gap: var(--dl-layout-space-halfunit);
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  flex-direction: column;
+}
+ 
+.sign-up41-textinput {
+  width: 100%;
+}
+ 
+.sign-up41-container4 {
+  gap: var(--dl-layout-space-halfunit);
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+ 
+.sign-up41-thq-terms-agree-elm {
+  gap: var(--dl-layout-space-halfunit);
+  display: flex;
+  padding: var(--dl-layout-space-halfunit);
+  align-items: center;
+}
+ 
+.sign-up41-thq-newsletter-elm {
+  gap: var(--dl-layout-space-halfunit);
+  display: flex;
+  padding: var(--dl-layout-space-halfunit);
+  align-items: center;
+}
+ 
+.sign-up41-thq-button-elm3 {
+  width: 100%;
+}
+ 
+.sign-up41-thq-text-elm9 {
+  text-align: center;
+}
+ 
+.login-fragment1 {
+  display: contents;
+}
+ 
+.login-text1 {
+  display: inline-block;
+}
+ 
+.login-fragment2 {
+  display: contents;
+}
+ 
+.login-text2 {
+  display: inline-block;
+}
+ 
+.login-fragment3 {
+  display: contents;
+}
+ 
+.login-text3 {
+  display: inline-block;
+}
+ 
+.login-fragment4 {
+  display: contents;
+}
+ 
+.login-text4 {
+  display: inline-block;
+}
+ 
+.login-fragment5 {
+  display: contents;
+}
+ 
+.login-text5 {
+  display: inline-block;
+}
+ 
+.sign-up41root-class-name {
+  opacity: 1;
+  position: absolute;
+}
+ 
+@media(max-width: 991px) {
+  .sign-up41-container1 {
+    gap: var(--dl-layout-space-twounits);
+    height: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+ 
+@media(max-width: 479px) {
+  .sign-up41-thq-form-elm {
+    padding-left: var(--dl-layout-space-oneandhalfunits);
+    padding-right: var(--dl-layout-space-oneandhalfunits);
+  }
+  .sign-up41-thq-text-elm1 {
+    text-align: center;
+  }
+  .sign-up41-thq-text-elm2 {
+    text-align: center;
+  }
+  .sign-up41-thq-button-elm1 {
+    width: 100%;
+  }
+  .sign-up41-thq-button-elm2 {
+    width: 100%;
+  }
+  .sign-up41-thq-button-elm3 {
+    width: 100%;
+  }
+}
+
+.login-container1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  opacity: 100%;
+  position: relative;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  background-size: cover;
+  justify-content: center;
+  background-image: url("public/backdrp-1500h.jpg");
+  background-position: center;
+}
+ 
+.login-thq-container-elm {
+  flex: 0 0 auto;
+  width: 100%;
+  border: 2px dashed rgba(120, 120, 120, 0.4);
+  height: 1011px;
+  display: flex;
+  opacity: 10%;
+  align-self: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  backdrop-filter: blur(20px);
+  justify-content: center;
+  background-color: aliceblue;
+}
+ 
+.login-fragment1 {
+  display: contents;
+}
+ 
+.login-text1 {
+  display: inline-block;
+}
+ 
+.login-fragment2 {
+  display: contents;
+}
+ 
+.login-text2 {
+  display: inline-block;
+}
+ 
+.login-fragment3 {
+  display: contents;
+}
+ 
+.login-text3 {
+  display: inline-block;
+}
+ 
+.login-fragment4 {
+  display: contents;
+}
+ 
+.login-text4 {
+  display: inline-block;
+}
+ 
+.login-fragment5 {
+  display: contents;
+}
+ 
+.login-text5 {
+  display: inline-block;
+}
+ 
+.login-link {
+  display: contents;
+}
+ 
+.login-container2 {
+  right: 50px;
+  border: 1px solid #ffffff5c;
+  bottom: 30px;
+  display: flex;
+  z-index: 22;
+  position: fixed;
+  box-shadow: 5px 5px 10px 0px rgba(31, 31, 31, 0.4);
+  min-height: auto;
+  align-items: center;
+  padding-top: 8px;
+  padding-left: 12px;
+  border-radius: 8px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  backdrop-filter: blur(6px);
+  background-color: rgba(41, 41, 41, 0.41);
+}
+ 
+.login-icon1 {
+  width: 24px;
+  margin-right: 4px;
+}
+ 
+.login-text6 {
+  color: white;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+/* ---------- Responsive Buttons ---------- */
+
+.sign-up41-thq-button-elm1,
+.sign-up41-thq-button-elm2,
+.sign-up41-thq-button-elm3 {
+  width: 100%;
+  max-width: 420px;
+  min-height: 48px;
+  padding: 12px 16px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.sign-up41-thq-button-elm1:hover,
+.sign-up41-thq-button-elm2:hover {
+  background: #f5f7ff;
+}
+
+.sign-up41-thq-button-elm3:hover {
+  transform: translateY(-1px);
+}
+
+/* icon alignment */
+.sign-up41-icon1,
+.sign-up41-icon3 {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* stack spacing */
+.sign-up41-container3 {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .sign-up41-thq-button-elm1,
+  .sign-up41-thq-button-elm2,
+  .sign-up41-thq-button-elm3 {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+/* ================= FIXES: RESPONSIVE + GOOGLE BUTTON ================= */
+
+/* Make main container scroll-safe on small screens */
+.login-container1 {
+  min-height: 100vh;
+  height: auto;
+  padding: 24px 12px;
+}
+
+/* Reduce the fixed-height overlay issues */
+.login-thq-container-elm {
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* Remove fixed height on sign-up container for responsiveness */
+.sign-up41-container1 {
+  height: auto;
+  min-height: 100vh;
+  padding: 24px 12px;
+}
+
+/* Overlay should not block clicks */
+.sign-up41-container2 {
+  pointer-events: none;
+}
+
+/* Center card properly */
+.sign-up41-thq-form-elm {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+/* Google Identity button full width */
+.g_id_signin,
+#g_id_onload {
+  width: 100% !important;
+  display: block !important;
+}
+
+.g_id_signin iframe {
+  width: 100% !important;
+}
+
+/* Improve input sizing consistency */
+.sign-up41-textinput {
+  width: 100%;
+  min-height: 46px;
+}
+
+/* Extra mobile polish */
+@media (max-width: 480px) {
+  .sign-up41-thq-form-elm {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .login-container1 {
+    padding: 16px 10px;
+  }
+}

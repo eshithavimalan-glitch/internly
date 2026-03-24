@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://elderly-good-natured-deer-7ifkz2.teleporthq.app/sitemap.xml

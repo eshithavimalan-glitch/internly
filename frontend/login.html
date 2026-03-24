@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sign Up – INTERNLY</title>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./login.css" />
+
+  <style>
+    body { background: linear-gradient(135deg, #0f172a, #020617); }
+
+    .auth-card{
+      width:100%; max-width:460px; background:#fff; border-radius:20px;
+      padding:32px 28px; box-shadow:0 25px 60px rgba(0,0,0,0.25);
+      display:flex; flex-direction:column; gap:20px;
+    }
+    .auth-title{ text-align:center; }
+    .auth-title h2{ font-size:28px; font-weight:700; margin-bottom:6px; }
+    .auth-title p{ font-size:14px; color:#64748b; }
+    .divider{ display:flex; align-items:center; gap:12px; color:#94a3b8; font-size:13px; }
+    .divider::before,.divider::after{ content:""; flex:1; height:1px; background:#e5e7eb; }
+    .input-group{ display:flex; flex-direction:column; gap:6px; }
+    .input-group label{ font-size:14px; font-weight:500; }
+    .input-group input{
+      padding:12px 14px; border-radius:10px; border:1px solid #e5e7eb; font-size:14px;
+    }
+    .input-group input:focus{ outline:none; border-color:#6366f1; }
+    .primary-btn{
+      background:#6366f1; color:#fff; border-radius:999px; padding:12px;
+      font-size:15px; font-weight:600; border:none; cursor:pointer; transition:0.2s ease;
+    }
+    .primary-btn:hover{ background:#4f46e5; }
+    .checkbox-row{ display:flex; align-items:flex-start; gap:10px; font-size:13px; color:#475569; }
+    #message{ font-size:14px; text-align:center; display:none; padding:10px; border-radius:10px; }
+
+    /* Make Google button full width visually */
+    .g_id_signin, #g_id_onload { width:100% !important; display:block !important; }
+    .g_id_signin iframe { width:100% !important; }
+
+    @media (max-width:480px){ .auth-card{ padding:24px 18px; } }
+  </style>
+</head>
+
+<body>
+  <div class="login-container1">
+    <div class="auth-card">
+
+      <div class="auth-title">
+        <h2>SIGN UP</h2>
+        <p>Already have an account? <a href="#" onclick="switchToLogin()" style="color:#6366f1">Sign in</a></p>
+      </div>
+
+      <!-- Google Sign-In (data-width MUST be a number) -->
+      <div id="g_id_onload"
+        data-client_id="191745860317-v65t5u2o4lr3d6hho9iv7rnskadii215.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse">
+      </div>
+
+      <div class="g_id_signin"
+        data-type="standard"
+        data-size="large"
+        data-width="320">
+      </div>
+
+      <div class="divider">OR</div>
+
+      <form id="signupForm">
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" id="signup-email" placeholder="Email address" required />
+        </div>
+
+        <div class="input-group">
+          <label>Password</label>
+          <input type="password" id="signup-password" placeholder="Minimum 6 characters" required />
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="terms" checked required />
+          <label for="terms">I agree to the Terms of Use & Privacy Policy</label>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="newsletter" />
+          <label for="newsletter">Subscribe to newsletter</label>
+        </div>
+
+        <button type="submit" class="primary-btn">Create Account</button>
+      </form>
+
+      <div id="message"></div>
+    </div>
+  </div>
+
+  <script>
+    const API_URL = 'http://localhost:5000/api';
+
+    function showMessage(msg, isError=false) {
+      const el = document.getElementById('message');
+      el.style.display = 'block';
+      el.textContent = msg;
+      el.style.background = isError ? '#fee2e2' : '#dcfce7';
+      el.style.color = isError ? '#b91c1c' : '#166534';
+    }
+
+    // ✅ Email Signup (FIXED)
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById('signup-email').value.trim();
+      const password = document.getElementById('signup-password').value;
+      const termsAgreed = document.getElementById('terms').checked;
+      const subscribeNewsletter = document.getElementById('newsletter').checked;
+
+      if (!termsAgreed) return showMessage('You must agree to the terms.', true);
+
+      try {
+        const res = await fetch(`${API_URL}/auth/signup`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, termsAgreed, subscribeNewsletter })
+        });
+
+        const data = await res.json();
+        console.log('Signup response:', data);
+
+        if (data.success) {
+          localStorage.setItem('token', data.data.token);
+          localStorage.setItem('user', JSON.stringify(data.data.user));
+          showMessage('Account created! Redirecting...');
+          setTimeout(() => window.location.href = 'profile.html', 1200);
+        } else {
+          showMessage(data.message || 'Signup failed', true);
+        }
+      } catch (err) {
+        console.error(err);
+        showMessage('Backend not reachable. Is server.js running?', true);
+      }
+    });
+
+    // ✅ Google Sign-In -> send ID token to backend
+    async function handleCredentialResponse(response) {
+      // response.credential is the Google ID token (JWT)
+      try {
+        const res = await fetch(`${API_URL}/auth/google`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ credential: response.credential })
+        });
+
+        const data = await res.json();
+        console.log('Google login response:', data);
+
+        if (data.success) {
+          localStorage.setItem('token', data.data.token);
+          localStorage.setItem('user', JSON.stringify(data.data.user));
+          showMessage('Signed in with Google! Redirecting...');
+          setTimeout(() => window.location.href = 'index.html', 1200);
+        } else {
+          showMessage(data.message || 'Google sign-in failed', true);
+        }
+      } catch (err) {
+        console.error(err);
+        showMessage('Google sign-in backend not reachable.', true);
+      }
+    }
+
+    function switchToLogin() {
+      alert('Login page can be added next.');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Matches - INTERNLY</title>
+  <link rel="stylesheet" href="job-matches.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="resume-score.html">Resume Score</a>
+  <a href="job-matches.html">Matches</a>
+  <a href="profile.html">Profile</a>
+  <a href="login.html" class="nav-btn">Login</a>
+</nav>
+
+
+<section class="matches-container">
+
+  <h1 class="page-title">YOUR INTERNSHIP MATCHES</h1>
+
+  <!-- Filters -->
+  <div class="filter-bar">
+    <select id="roleFilter">
+      <option value="all">All Roles</option>
+      <option value="frontend">Frontend</option>
+      <option value="backend">Backend</option>
+    </select>
+
+    <select id="locationFilter">
+      <option value="all">All Locations</option>
+      <option value="remote">Remote</option>
+      <option value="india">India</option>
+    </select>
+
+    <button id="applyFilter" class="primary-btn">Apply Filter</button>
+  </div>
+
+  <!-- Cards -->
+  <div class="cards-grid">
+
+    <div class="glass-card match-card fade-in"
+         data-role="frontend"
+         data-location="remote"
+         data-score="92">
+
+      <h3>TechNova</h3>
+      <p>Frontend Intern</p>
+      <p>Remote</p>
+
+      <div class="score-section">
+        <div class="progress-track">
+          <div class="progress-fill"></div>
+        </div>
+        <span class="score-text">0%</span>
+      </div>
+
+      <button class="secondary-btn details-btn">View Details</button>
+
+      <div class="expandable">
+        <p>Required: React, JS, APIs</p>
+        <p>Stipend: ₹15,000/month</p>
+      </div>
+
+      <button class="primary-btn save-btn">Save</button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script src="job-matches.js"></script>
+</body>
+</html>

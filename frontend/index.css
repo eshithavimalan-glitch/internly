@@ -1,0 +1,171 @@
+/* 1. MAIN WRAPPER - Fixed the background and alignment */
+.home-container1 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0F172A; /* Fallback navy */
+  background-image: url("public/gemini_generated_image_z1w37bz1w37bz1w3-1500h.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+/* 2. NAVBAR - Removed absolute positioning */
+.home-thq-navbar-elm {
+  width: 100%;
+  display: flex;
+  padding: 20px 50px;
+  z-index: 100;
+  position: relative;
+  align-items: center;
+  /* CHANGE: This ensures the logo (if any) is on left and links stay flexible */
+  justify-content: center; 
+  background-color: transparent;
+}
+.home-thq-linkcontainer-elm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 35px;
+  /* CHANGE: This centers the entire link group */
+  margin: 0 auto; 
+  padding-left: 150px; /* Adjust this if the button pushes it too far left */
+}
+.home-link1, .home-link2, .home-link3, .home-navlink1 {
+  color: #F8FAFC !important; /* Brighter white for visibility */
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect so users know they are clickable */
+.home-link1:hover, .home-link2:hover, .home-link3:hover, .home-navlink1:hover {
+  color: #22D3EE !important; /* Glows Cyan on hover */
+}
+/* ADD THIS NEW BLOCK HERE */
+.home-navlink2 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6366f1 !important; /* Forces the indigo color */
+  color: #FFFFFF !important;           /* Forces white text */
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-left: 10px;                   /* Space between Matches and Button */
+}
+
+.home-navlink2:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 15px rgba(99, 102, 241, 0.4);
+}
+
+/* 3. HERO SECTION - Groups the main text for proper spacing */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 60px;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+.home-thq-text-elm2 {
+  color: #F8FAFC;
+  font-size: clamp(32px, 5vw, 64px); /* Dynamic sizing */
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.home-thq-text-elm1 {
+  color: #CBD5E1;
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* 4. CARDS WRAPPER - This makes the cards sit in a neat row */
+.cards-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 80px;
+  width: 100%;
+  padding: 0 40px;
+  flex-wrap: wrap; /* Allows stacking on small screens */
+}
+
+/* 5. INDIVIDUAL CARDS - Modernized with gradients and centered text */
+.home-container2, .home-container3, .home-container4 {
+  width: 300px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  text-align: center;
+  background-image: radial-gradient(circle at top left, rgba(252, 0, 255, 0.4), rgba(0, 219, 222, 0.2));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.home-container2:hover, .home-container3:hover, .home-container4:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 30px rgba(34, 211, 238, 0.3);
+  border-color: #22D3EE;
+}
+
+/* Text inside cards */
+.home-text1, .home-text2, .home-text3 {
+  color: #F8FAFC;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* 6. FOOTER */
+.footer-section {
+  margin-top: auto;
+  padding: 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home-text4 {
+  color: #94A3B8;
+  font-size: 18px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.home-card-link {
+  text-decoration: none; 
+  color: inherit;        
+  display: contents;     
+}
+
+/* Enhancing the hover effect for the entire clickable area */
+.home-card-link:hover .home-container2,
+.home-card-link:hover .home-container3,
+.home-card-link:hover .home-container4 {
+  transform: translateY(-10px);             
+  box-shadow: 0px 10px 30px rgba(34, 211, 238, 0.4); 
+  filter: brightness(1.1);                   
+  cursor: pointer;                           
+}

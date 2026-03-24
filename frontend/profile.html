@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile - INTERNLY</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="resume-score.html">Resume Score</a>
+  <a href="job-matches.html">Matches</a>
+  <a href="profile.html">Profile</a>
+  <a href="login.html" class="nav-btn">Login</a>
+</nav>
+
+
+<section class="profile-container">
+
+  <h1 class="page-title">YOUR DASHBOARD</h1>
+
+  <div class="profile-grid">
+
+    <!-- Profile Card -->
+    <div class="glass-card fade-in" id="profileCard">
+
+      <div class="profile-header">
+        <img src="https://via.placeholder.com/120" class="profile-img">
+        <button id="editBtn" class="secondary-btn">Edit</button>
+      </div>
+
+      <div class="profile-info">
+        <p><strong>Name:</strong> <span id="nameText">Shiv Sharma</span>
+          <input id="nameInput" class="hidden-input" value="Shiv Sharma">
+        </p>
+
+        <p><strong>Email:</strong> <span id="emailText">shiv@example.com</span>
+          <input id="emailInput" class="hidden-input" value="shiv@example.com">
+        </p>
+      </div>
+
+      <button id="saveBtn" class="primary-btn hidden">Save</button>
+
+    </div>
+
+    <!-- Resume Card -->
+    <div class="glass-card fade-in" id="resumeCard">
+
+      <h3>Resume Summary</h3>
+      <p>shiv_resume.pdf</p>
+
+      <div class="score-section">
+        <span>Resume Score</span>
+
+        <div class="progress-track">
+          <div class="progress-fill" id="scoreBar"></div>
+        </div>
+
+        <span class="score-text" id="scoreText">0%</span>
+      </div>
+
+      <button id="detailsBtn" class="secondary-btn">
+        View Skill Breakdown
+      </button>
+
+      <div class="expandable" id="detailsSection">
+        <ul>
+          <li>JavaScript – 90%</li>
+          <li>React – 85%</li>
+          <li>Design – 75%</li>
+        </ul>
+      </div>
+
+      <button id="uploadNewBtn" class="primary-btn full-btn">
+        Upload New Resume
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script src="profile.js"></script>
+</body>
+</html>
